@@ -35,6 +35,6 @@ Accept Point of Sale payments in any active currency.
     "installable": True,
     "application": False,
     "auto_install": False,
-    "price": 25.00,
+    "price": 49.90,
     "currency": "USD",
 }
