@@ -46,6 +46,13 @@ patch(PaymentScreen.prototype, {
         return this.currentOrder.get_total_with_tax() * this.smRate;
     },
 
+    get smChangeInCurrency() {
+        if (!this.smSelectedCurrency) {
+            return 0;
+        }
+        return (this.currentOrder.get_change() || 0) * this.smRate;
+    },
+
     smSelectCurrency(ev) {
         this.smState.currencyId = parseInt(ev.target.value) || false;
     },
