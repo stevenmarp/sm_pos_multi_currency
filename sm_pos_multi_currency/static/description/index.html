@@ -53,6 +53,42 @@
         </div>
     </section>
 
+    <section class="row flex-column p-4 bg-light shadow" style="margin-bottom:50px; border-radius:20px;">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-10 col-11 text-center">
+                <div style="width:fit-content; margin:0 auto 14px; padding:4px 12px; color:#ffffff; background:#16a34a; border-radius:20px; font-size:12px; font-weight:700;">
+                    How It Works
+                </div>
+                <div style="font-size:15px; color:#555;">
+                    A shop that keeps its books in USD takes a payment in Indonesian Rupiah, step by step.
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center px-3">
+            <div class="col-lg-10 col-12 mb-4">
+                <h4 style="color:#0E2D59; font-size:20px; font-weight:600; margin-bottom:8px;">1. Enable It Per POS</h4>
+                <p style="font-size:14px; color:#555;">Point of Sale &gt; Configuration &gt; Settings &gt; Payment: tick Multi Currency and pick the currencies your cashiers may accept. Rates come straight from Accounting &gt; Currencies.</p>
+                <img src="settings.png" class="img-fluid shadow-sm" style="border-radius:8px; max-width:100%;" alt="Multi Currency setting in POS configuration"/>
+            </div>
+            <div class="col-lg-10 col-12 mb-4">
+                <h4 style="color:#0E2D59; font-size:20px; font-weight:600; margin-bottom:8px;">2. The Panel Tells The Cashier What To Ask For</h4>
+                <p style="font-size:14px; color:#555;">Order total is $367.77. The customer wants to pay in Rupiah. Select IDR: the panel shows the rate (1 USD = Rp 17,962) and the total to collect (Rp 6,605,884.74). The customer hands over Rp 6,605,885, the cashier types it in and hits Update Amount — the payment line is converted back to $367.77 automatically. Remaining: $0.00.</p>
+                <img src="payment_exact.png" class="img-fluid shadow-sm" style="border-radius:8px; max-width:100%;" alt="Payment screen with currency conversion panel"/>
+            </div>
+            <div class="col-lg-10 col-12 mb-4">
+                <h4 style="color:#0E2D59; font-size:20px; font-weight:600; margin-bottom:8px;">3. Overpaid? Change In Both Currencies</h4>
+                <p style="font-size:14px; color:#555;">If the customer hands over more, the payment line keeps the original foreign amount — Cash (2,555,555 Rp) = $216.64 — and the change shows in your company currency and, inside the panel, converted to the foreign currency so the cashier knows exactly how many Rupiah to hand back.</p>
+                <img src="payment_change.png" class="img-fluid shadow-sm" style="border-radius:8px; max-width:100%;" alt="Payment line with foreign amount and change"/>
+            </div>
+            <div class="col-lg-10 col-12 mb-2">
+                <h4 style="color:#0E2D59; font-size:20px; font-weight:600; margin-bottom:8px;">4. The Books Stay In Your Currency</h4>
+                <p style="font-size:14px; color:#555;">The receipt prints both amounts — Cash (Rp 6,605,885) $367.77 — but your accounting never leaves USD. The foreign amount is stored as a witness of the physical cash received: check it on the backend order under the Payments tab, columns Amount in Currency and Paid Currency.</p>
+                <img src="receipt.png" class="img-fluid shadow-sm" style="border-radius:8px; max-width:100%;" alt="Receipt with foreign amount per payment line"/>
+            </div>
+        </div>
+    </section>
+
     <section class="row mb-5 p-3 py-5 shadow" style="border-radius:20px; background-color:#0E2D59 !important;">
         <div class="col">
             <div class="row mt-4 mb-5 text-center flex-column justify-content-center">
