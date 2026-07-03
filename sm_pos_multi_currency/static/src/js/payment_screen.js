@@ -43,7 +43,7 @@ patch(PaymentScreen.prototype, {
         if (!this.smSelectedCurrency) {
             return 0;
         }
-        return this.currentOrder.get_total_with_tax() * this.smRate;
+        return this.currentOrder.totalDue * this.smRate;
     },
 
     smSelectCurrency(ev) {
@@ -69,7 +69,7 @@ patch(PaymentScreen.prototype, {
             return;
         }
         const converted = amountIn / this.smRate;
-        line.set_amount(converted);
+        line.setAmount(converted);
         line.sm_currency_id = cur;
         line.sm_amount_currency = amountIn;
         this.smState.amountIn = "";

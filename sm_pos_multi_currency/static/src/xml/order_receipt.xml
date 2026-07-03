@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="sm_pos_multi_currency.OrderReceipt"
+       t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('paymentlines')]/t[@t-esc='line.payment_method_id.name']" position="after">
+            <span t-if="line.sm_currency_id and line.sm_amount_currency">
+                (<t t-esc="line.sm_amount_currency"/><t t-esc="line.sm_currency_id.symbol"/>)
+            </span>
+        </xpath>
+    </t>
+
+</templates>
