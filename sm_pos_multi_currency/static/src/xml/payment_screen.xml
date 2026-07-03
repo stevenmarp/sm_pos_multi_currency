@@ -26,6 +26,10 @@
                             <t t-esc="smTotalInCurrency.toFixed(smSelectedCurrency.decimal_places)"/><t t-esc="smSelectedCurrency.symbol"/>
                         </t>
                     </div>
+                    <div t-if="smSelectedCurrency and smChangeInCurrency gt 0" class="text-success fw-bolder">
+                        Change =
+                        <t t-esc="smChangeInCurrency.toFixed(smSelectedCurrency.decimal_places)"/><t t-esc="smSelectedCurrency.symbol"/>
+                    </div>
                 </div>
                 <div class="fw-bolder mb-1">Payment amount in</div>
                 <input type="number" class="form-control mb-2" t-model="smState.amountIn"
