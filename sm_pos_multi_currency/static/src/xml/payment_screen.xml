@@ -16,19 +16,14 @@
                 <div class="border rounded p-2 mb-2 small">
                     <div>
                         1 <t t-esc="pos.currency.name"/> =
-                        <t t-if="smSelectedCurrency">
-                            <t t-esc="smRate"/><t t-esc="smSelectedCurrency.symbol"/>
-                        </t>
+                        <t t-if="smSelectedCurrency" t-esc="smFormat(smRate)"/>
                     </div>
                     <div>
                         Total Amount =
-                        <t t-if="smSelectedCurrency">
-                            <t t-esc="smTotalInCurrency.toFixed(smSelectedCurrency.decimal_places)"/><t t-esc="smSelectedCurrency.symbol"/>
-                        </t>
+                        <t t-if="smSelectedCurrency" t-esc="smFormat(smTotalInCurrency)"/>
                     </div>
                     <div t-if="smSelectedCurrency and smChangeInCurrency gt 0" class="text-success fw-bolder">
-                        Change =
-                        <t t-esc="smChangeInCurrency.toFixed(smSelectedCurrency.decimal_places)"/><t t-esc="smSelectedCurrency.symbol"/>
+                        Change = <t t-esc="smFormat(smChangeInCurrency)"/>
                     </div>
                 </div>
                 <div class="fw-bolder mb-1">Payment amount in</div>
@@ -42,13 +37,13 @@
     <t t-name="sm_pos_multi_currency.PaymentScreenPaymentLines"
        t-inherit="point_of_sale.PaymentScreenPaymentLines" t-inherit-mode="extension">
         <xpath expr="//span[hasclass('payment-name')]" position="after">
-            <span t-if="line.sm_currency_id and line.sm_amount_currency" class="text-muted ms-2 fs-4">
-                (<t t-esc="line.sm_amount_currency"/><t t-esc="line.sm_currency_id.symbol"/>)
+            <span t-if="line.smForeignLabel" class="text-muted ms-2 fs-4">
+                (<t t-esc="line.smForeignLabel"/>)
             </span>
         </xpath>
         <xpath expr="//t[@t-else='']//div[hasclass('payment-infos')]/t[@t-esc='line.payment_method_id.name']" position="after">
-            <span t-if="line.sm_currency_id and line.sm_amount_currency" class="text-muted ms-2 fs-4">
-                (<t t-esc="line.sm_amount_currency"/><t t-esc="line.sm_currency_id.symbol"/>)
+            <span t-if="line.smForeignLabel" class="text-muted ms-2 fs-4">
+                (<t t-esc="line.smForeignLabel"/>)
             </span>
         </xpath>
     </t>

@@ -57,6 +57,18 @@ patch(PaymentScreen.prototype, {
         this.smState.currencyId = parseInt(ev.target.value) || false;
     },
 
+    smFormat(value) {
+        const cur = this.smSelectedCurrency;
+        if (!cur) {
+            return "";
+        }
+        const amount = Number(value || 0).toLocaleString(undefined, {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: cur.decimal_places,
+        });
+        return cur.position === "before" ? `${cur.symbol} ${amount}` : `${amount} ${cur.symbol}`;
+    },
+
     smUpdateAmount() {
         const cur = this.smSelectedCurrency;
         const amountIn = parseFloat(this.smState.amountIn);
