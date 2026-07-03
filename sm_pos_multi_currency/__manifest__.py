@@ -30,6 +30,7 @@ Accept Point of Sale payments in any active currency.
     "author": "Steven Marp",
     "website": "https://apps.odoo.com/apps/modules/browse?author=Steven Marp",
     "license": "OPL-1",
+    "images": ["static/description/banner.gif"],
     "depends": ["point_of_sale"],
     "data": [
         "views/res_config_settings_views.xml",
@@ -44,6 +45,6 @@ Accept Point of Sale payments in any active currency.
     "installable": True,
     "application": False,
     "auto_install": False,
-    "price": 25.00,
+    "price": 48.00,
     "currency": "USD",
 }
