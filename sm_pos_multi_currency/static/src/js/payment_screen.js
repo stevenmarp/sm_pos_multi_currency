@@ -50,7 +50,7 @@ patch(PaymentScreen.prototype, {
         if (!this.smSelectedCurrency) {
             return 0;
         }
-        return (this.currentOrder.get_change() || 0) * this.smRate;
+        return (this.currentOrder.change || 0) * this.smRate;
     },
 
     smSelectCurrency(ev) {
